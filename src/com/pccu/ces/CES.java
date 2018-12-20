@@ -118,7 +118,15 @@ public class CES extends Student {
 		}
 		System.out.println("*************************");
 	}
-	
+	private static void Read() {
+		FileReader reader = null;
+		
+			Iterator<Student> it = list.iterator();
+			while (it.hasNext()) {
+			Student s = it.next();
+			System.out.println("Name: " + s.getName() + " " + "Avg: " + s.mAvg);
+			}
+	}
 	private static void InqueryByID () {
 		int id;
 		System.out.println("Enter ID :");
@@ -173,6 +181,7 @@ public class CES extends Student {
 			System.out.println("Score Enrollment Press 1");
 			System.out.println("Inquery by ID 	 Press 2");
 			System.out.println("List by Score    Press 3");
+			System.out.println("ReadFile         Press 4");
 			System.out.println("Exit             Press 0");
 			System.out.println("*************************");
 			
@@ -188,7 +197,9 @@ public class CES extends Student {
 			case 3:
 				ListByScore ();
 				break;
-				
+			case 4:
+				Read();
+				break;				
 			case 0:
 			default:
 				exit = true;
